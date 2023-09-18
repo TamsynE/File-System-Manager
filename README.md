@@ -15,6 +15,7 @@ Compiling and running the Command Line Program with the File System Manager:
 # Dependencies
 - include <sys/types.h>
 - include <sys/stat.h>
+- include <stdbool.h>
 - include <unistd.h>
 - include <stdint.h>
 - include <stdio.h>
