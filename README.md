@@ -13,12 +13,17 @@ Compiling and running the Command Line Program with the File System Manager:
 - ./command.exe
 
 # Dependencies
-- include <math.h>
+- include <sys/types.h>
+- include <sys/stat.h>
+- include <unistd.h>
+- include <stdint.h>
 - include <stdio.h>
 - include <stdlib.h>
-- include <stdbool.h>
-- include "project1.h"
-- include "project2.h"
+- include <string.h>
+- include <dirent.h>
+- include <ctype.h>
+- include "utility.h"
+- include "file_system.h"
 
 # File System Manager Functions
 - void CreateMemoryManager(int sizeTotal, bool bf)
