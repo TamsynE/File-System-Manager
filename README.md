@@ -23,6 +23,8 @@ Compiling and running the Command Line Program with the File System Manager:
 - include <string.h>
 - include <dirent.h>
 - include <ctype.h>
+- include <memory.h>
+- include <assert.h>
 - include "utility.h"
 - include "file_system.h"
 
