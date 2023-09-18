@@ -3,7 +3,7 @@
 # Usage
 Group Project: 3 Members
 
-The core of this project is a library that allows you to interact and manipulate a virtual file system. Specifically, it reads a isk image and summarizes the partitions within the MBR, and lists the contents of the root directory. In addition, the command line program can interact with the disk image using the LS, CAT, and EXPORT commands.
+The core of this project is a library that allows you to interact and manipulate a virtual file system. Specifically, it reads a disk image, summarizes the partitions within the MBR, and lists the contents of the root directory. In addition, the command line program can interact with the disk image using the LS, CAT, and EXPORT commands.
 
 # Installation
 Ensure that all files are in the same folder. Enter the file the project is in.  
@@ -29,12 +29,13 @@ Compiling and running the Command Line Program with the File System Manager:
 - include "file_system.h"
 
 # File System Manager Functions
-- void CreateMemoryManager(int sizeTotal, bool bf)
-- void* mallocMem(int size, bool bf)
-- NODE* CheckBusyList(void* data)
-- NODE* CheckFreeListBefore(NODE* curr)
-- NODE* CheckFreeListAfter(NODE* curr)
-- void* freeMem(void* data)
-- void DumpFree()
-- void DumpBusy()
-- void DestroyMem()
+- uint16_t FindNextCluster(FAT* fat, uint16_t cluster)
+- char* ReadData(uint16_t cluster, FAT* fat, _DIR_ENTRY* dir, size_t offset_data, uint8_t sectors_per_cluster, FILE* fp)
+- FILE* ReadFile(const char* filename)
+- MBR* ReadMBR(FILE* fp, long int offset)
+- BOOT* ReadBoot(FILE* fp, size_t offset)
+- FAT* ReadFAT(FILE* fp, BOOT* boot, size_t offset)
+- void ReadRootDir(FILE* fp, BOOT* boot, size_t offset, FAT* fat, size_t offset_data)
+- void PrintMBR(MBR* mbr)
+- size_t GetSize(FILE* fp, BOOT* boot, size_t offset, FAT* fat, size_t offset_data, char* f_name)
+- char* PrintFile(FILE* fp, BOOT* boot, size_t offset, FAT* fat, size_t offset_data, char* f_name);\
